@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VehicleParking.Interfaces\VehicleParking.Interfaces.csproj" />
+    <ProjectReference Include="..\VehicleParking.IoC\VehicleParking.IoC.csproj" />
+  </ItemGroup>
+
+</Project>
