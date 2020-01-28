@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using VehicleParking.Interfaces;
 
@@ -14,14 +15,22 @@ namespace VehicleParking.Entities
             return _vehicleToSlotMap;
         }
 
-        public void MarkBooked(IParkingSlot slot)
+        public void MarkBooked(VehicleBase vehicle, IParkingSlot slot)
         {
-            throw new NotImplementedException();
+            if (!_vehicleToSlotMap.ContainsKey(slot))
+            {
+                _vehicleToSlotMap.Add(slot, vehicle);
+            }
         }
 
         public void MarkVacant(VehicleBase vehicle)
         {
-            throw new NotImplementedException();
+            var matched = _vehicleToSlotMap.Single(x => x.Value == vehicle);
+
+            if (_vehicleToSlotMap.ContainsKey(matched.Key))
+            {
+                _vehicleToSlotMap.Remove(matched.Key);
+            }
         }
     }
 }

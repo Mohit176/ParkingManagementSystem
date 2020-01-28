@@ -6,6 +6,9 @@ using VehicleParking.Interfaces;
 
 namespace VehicleParking.IoC
 {
+    // It can be replaced by IoC container 
+
+
     // Option1: It can be read from DI framework.
     // Option2: VehicleType to Vehicle concreate class mapping can be read from external configuration file
     // This class can read configuration file and instantiate lookup collection using lazy load.

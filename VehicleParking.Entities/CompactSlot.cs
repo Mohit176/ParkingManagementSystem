@@ -26,6 +26,11 @@ namespace VehicleParking.Entities
 
             return isParked;
         }
+
+        public bool MarkedUnoccupied(VehicleBase vehicle)
+        {
+           return IsOccupied = false;
+        }
     }
 
 

@@ -6,6 +6,7 @@ using VehicleParking.IoC;
 
 namespace VehicleParking.Entities
 {
+    // It can be replaced by IoC container 
     public class ParkingLevel : IParkingLevel
     {
         private IDictionary<int, LinkedList<LinkedList<LinkedListNode<IParkingSlot>>>> _parkingLookup =

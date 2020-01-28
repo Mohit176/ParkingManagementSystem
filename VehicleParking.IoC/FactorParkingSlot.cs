@@ -6,6 +6,7 @@ using VehicleParking.Interfaces;
 
 namespace VehicleParking.IoC
 {
+    // It can be replaced by IoC container 
     public class FactorParkingSlot
     {
         public static IParkingSlot CreateParkingSlot(SlotTypes slotType, int parkingNumber)

@@ -6,6 +6,7 @@ using VehicleParking.Interfaces;
 
 namespace VehicleParking.IoC
 {
+    // It can be replaced by IoC container 
     public static class FactoryParkingLot
     {
         public static IParkingLot Create(int numberOfParkingLevels)

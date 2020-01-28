@@ -25,17 +25,21 @@ namespace VehicleParking.Entities
 
                 if (largeSlot != null)
                 {
-                    
-                    // check consecutive five nodes are available or not , if available allocate parking to bus
+                    int counter = 0;
+                    int requiredSlots = 5; //todo: read from configuration
 
-                    //while ((largeSlot != null))
-                    //{
-                    //    largeSlot = largeSlot.Next;
-                    //    if(!largeSlot.Value.IsOccupied)
-                    //}
-                        
+                    while (largeSlot.Next == null || !largeSlot.Next.Value.IsOccupied || counter == requiredSlots)
+                    {
+                        if (!largeSlot.Next.Value.IsOccupied)
+                        {
+                            counter++;
 
-                    break;
+                            largeSlot = largeSlot.Next;
+                        }
+                    }
+
+                    if (counter == requiredSlots) break;
+                   
                 }
 
             }

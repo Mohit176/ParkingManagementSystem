@@ -25,7 +25,7 @@ namespace VehicleParking.Interfaces
         public void AllocateParkingSlot(VehicleBase vehicle, IParkingSlot parkingSlot)
         {
             parkingSlot.MarkedOccupied(vehicle);
-            _bookingTracker.MarkBooked(parkingSlot);
+            _bookingTracker.MarkBooked(vehicle, parkingSlot);
         }
 
         public void ConfigureParking()
@@ -40,7 +40,7 @@ namespace VehicleParking.Interfaces
 
         public IParkingSlot FindParking(VehicleBase vehicle)
         {
-            IParkingLocator parkingLocator = _parkingLocatorProvider.LocateService(vehicle, _parkingLookup);
+            IParkingLocator parkingLocator = _parkingLocatorProvider.LocateService(vehicle);
 
             IParkingSlot availableParkingSlots = parkingLocator.LocateFreeSlots(vehicle);
 

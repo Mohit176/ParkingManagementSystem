@@ -6,9 +6,8 @@ namespace VehicleParking.Interfaces
 {
     public interface IBookingTracker
     {
-        void MarkBooked(IParkingSlot slot);
+        void MarkBooked(VehicleBase vehicle, IParkingSlot slot);
         void MarkVacant(VehicleBase vehicle);
-
         IDictionary<IParkingSlot, VehicleBase> GetBookedParkings();
     }
 }
